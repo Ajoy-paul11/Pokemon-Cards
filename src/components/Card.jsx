@@ -5,18 +5,16 @@ function Card() {
   const [pokemon, setPokemon] = useState();
   useEffect(() => {
     axios
-      .get("https://pokeapi.co/api/v2/pokemon/22")
+      .get("https://pokeapi.co/api/v2/pokemon/22/")
       .then((response) => {
-        console.log(response.data);
-
         setPokemon(response.data);
       })
       .catch((err) => console.error("ERROR while fetching data", err));
   }, []);
   return (
-    <div className=" w-[30%] mx-auto border shadow-xl rounded-lg border-[#252721]">
+    <div className=" w-[90%] lg:w-[30%] mx-auto shadow-xl rounded-lg shadow-[#363634] pb-4">
       <img
-        className=" w-[90%] mx-auto mt-6"
+        className=" w-[90%] mx-auto mt-6 h-[250px]"
         src={pokemon?.sprites.other.dream_world.front_default}
         alt="pokemon-avatar"
       />
@@ -29,6 +27,9 @@ function Card() {
           <div key={index}> {value.ability.name}</div>
         ))}
       </div>
+      <button className=" w-36 px-4 py-2 rounded-lg my-4 bg-blue-700 text-white block mx-auto">
+        New Pokemon
+      </button>
     </div>
   );
 }
