@@ -3,10 +3,12 @@ import Card from "./components/Card.jsx";
 
 function App() {
   return (
-    <>
-      <h2>Pokemon Avatar</h2>
-      <Card />
-    </>
+    <div className=" bg-[#202829] h-screen">
+      <div className=" pt-12 text-gray-300">
+        <h2 className=" text-center mb-4 text-3xl font-bold">Pokemon Avatar</h2>
+        <Card />
+      </div>
+    </div>
   );
 }
 
